@@ -1,5 +1,6 @@
-var leftZone = new DropZone('.drop-zone_left', '#left-file');
-var rightZone = new DropZone('.drop-zone_right', '#right-file');
+/* global DropZone:false */
+new DropZone('.drop-zone_left', '#left-file');
+new DropZone('.drop-zone_right', '#right-file');
 
 var toggle = document.querySelector('.click-me');
 var wrapper = document.querySelector('.diff-wrapper');

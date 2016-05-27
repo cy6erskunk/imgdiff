@@ -12,7 +12,7 @@
                 this.filesInput = document.querySelector(filesInput);
                 this.filesInput.addEventListener('change', this.handleFileSelect.bind(this), false);
 
-                this.dropZone.addEventListener('click', e => {
+                this.dropZone.addEventListener('click', () => {
                     this.filesInput.click();
                 });
             }
@@ -36,13 +36,14 @@
 
     DropZone.prototype.displayInfo = function (files) {
         var output = [];
-        for (var i = 0, f; f = files[i]; i++) {
+        for (var i = 0, f; (f = files[i]); i++) {
             output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
                 f.size, ' bytes, last modified: ',
                 f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
                 '</li>');
         }
 
+        /* eslint no-console: 0 */
         console.log('<ul>' + output.join('') + '</ul>');
     };
 
@@ -50,11 +51,11 @@
         var files = (evt.dataTransfer || evt.target).files;
         this.displayInfo(files);
 
-        for (var i = 0, f; f = files[i]; i++) {
+        for (var i = 0, f; (f = files[i]); i++) {
 
             var reader = new FileReader();
 
-            reader.onload = (theFile => {
+            reader.onload = (() => {
                 return e => {
                     var img = document.createElement('img');
 
