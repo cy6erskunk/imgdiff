@@ -1,0 +1,5 @@
+{
+    "name": "imgdiff",
+    "version": "0.1.0",
+    "main": "electron-app.js"
+}
