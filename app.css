@@ -22,8 +22,28 @@
         flex: 1;
         cursor: pointer;
 
-        border: 1px solid navy;
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 1em;
+        border: 3px dashed gray;
     }
+
+    .drop-zone__file {
+        display: none;
+    }
+
+    .drop-zone__message {
+        background-color: white;
+        font-size: 2em;
+        line-height: 2em;
+        max-width: 70%;
+        text-align: center;
+    }
+
 
     .dropped-image {
         max-width: 100%;
